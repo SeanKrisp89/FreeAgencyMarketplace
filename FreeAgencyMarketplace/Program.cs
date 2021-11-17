@@ -24,3 +24,8 @@ namespace FreeAgencyMarketplace
 				});
 	}
 }
+
+
+//ASP.NET Core web application is actually a console project which starts executing from
+//the entry point public static void Main() in Program class where we can create a host
+//for the web application.
