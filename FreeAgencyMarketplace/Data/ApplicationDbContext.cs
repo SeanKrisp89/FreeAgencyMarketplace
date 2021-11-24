@@ -4,22 +4,32 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using FreeAgencyMarketplace.Models;
+using Microsoft.Extensions.Configuration;
 
 namespace FreeAgencyMarketplace.Data
 {
-	public class ApplicationDbContext : IdentityDbContext
+	public class ApplicationDbContext : DbContext
 	{
 		public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
 			: base(options)
 		{
 		}
 
-		
 		public ApplicationDbContext()
 		{
 
 		}
 
+		//RESEARCH THIS: I had to add this in order to establish a valid connection to the database
+		protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+		{
+			IConfigurationRoot configuration = new ConfigurationBuilder()
+
+				.SetBasePath(AppDomain.CurrentDomain.BaseDirectory)
+				.AddJsonFile("appsettings.json")
+				.Build();
+			optionsBuilder.UseSqlServer(configuration.GetConnectionString("DefaultConnection"));
+		}
 
 		//So in .NET Core MVC, we need to add our models to the ApplicationDbContext.cs file in order to generate the DB (just like in our .NET Framework tutorial)
 		public DbSet<Player> Players { get; set; }

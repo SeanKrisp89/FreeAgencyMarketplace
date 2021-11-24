@@ -2,15 +2,22 @@
 
 <h2>@ViewBag.title</h2>
 
-<ul>
+<table class="table table-dark table-hover table-bordered">
+	<tr>
+		<th>Name</th>
+		<th>Position</th>
+		<th>Age</th>
+		<th>Free Agent Status</th>
+	</tr>
 
 	@foreach (var player in Model)
 	{
-		<li>@player.Name</li>
-		<li>@player.Position.</li>
-		<li>@player.Age</li>
-		<li>@player.IsFreeAgent.</li>
-		<li>@player.Id</li>
+		<tr>
+			<td>@player.Name</td>
+			<td>@player.Position</td>
+			<td>@player.Age</td>
+			<td>@player.IsFreeAgent</td>
+		</tr>
 	}
 
-</ul>
+</table>

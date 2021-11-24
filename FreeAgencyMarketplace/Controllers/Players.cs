@@ -26,15 +26,15 @@ namespace FreeAgencyMarketplace.Controllers
 
 		public IActionResult Index()
 		{
-			//Get all players from DB
-			//var players = _context.Players.ToList();
+			////Hardcoded prior to use of DB
+			//var players = new List<Player>
+			//{
+			//	new Player{ Id = 1, Age = 25, IsFreeAgent = false, Name = "Roquan Smith", Position = "Middle Linebacker"},
+			//	new Player{ Id = 2, Age = 23, IsFreeAgent = false, Name = "Darnell Mooney", Position = "Wide Receiver"},
+			//	new Player{ Id = 3, Age = 22, IsFreeAgent = false, Name = "Justin Fields", Position = "Quarterback"}
+			//};
 
-			var players = new List<Player>
-			{
-				new Player{ Id = 1, Age = 25, IsFreeAgent = false, Name = "Roquan Smith", Position = "Middle Linebacker"},
-				new Player{ Id = 2, Age = 23, IsFreeAgent = false, Name = "Darnell Mooney", Position = "Wide Receiver"},
-				new Player{ Id = 3, Age = 22, IsFreeAgent = false, Name = "Justin Fields", Position = "Quarterback"}
-			};
+			var players = _context.Players.ToList();
 
 			ViewBag.title = "Players";
 

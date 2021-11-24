@@ -1,0 +1,22 @@
+﻿@model IEnumerable<FreeAgencyMarketplace.Models.Team>
+
+<h2>@ViewBag.title</h2>
+
+<table class="table table-dark table-hover table-bordered">
+	<tr>
+		<th>Name</th>
+		<th>City</th>
+		<th>Division</th>
+		<th>Stadium</th>
+	</tr>
+	@foreach (var team in Model)
+	{
+		<tr>
+			<td>@team.Name</td>
+			<td>@team.City</td>
+			<td>@team.Conference @team.Division</td>
+			<td>@team.Stadium</td>
+		</tr>
+	}
+</table>
+
