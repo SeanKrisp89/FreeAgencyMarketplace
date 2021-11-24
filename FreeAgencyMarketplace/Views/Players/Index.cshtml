@@ -1,0 +1,16 @@
+﻿@model IEnumerable<FreeAgencyMarketplace.Models.Player>
+
+<h2>@ViewBag.title</h2>
+
+<ul>
+
+	@foreach (var player in Model)
+	{
+		<li>@player.Name</li>
+		<li>@player.Position.</li>
+		<li>@player.Age</li>
+		<li>@player.IsFreeAgent.</li>
+		<li>@player.Id</li>
+	}
+
+</ul>

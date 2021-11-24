@@ -19,8 +19,8 @@ namespace FreeAgencyMarketplace.Models
 		public string Stadium { get; set; }
 		[Required]
 		public string City { get; set; }
-		[Required]
-		public byte ActiveRosterCount { get; set; }
+
+		public byte? ActiveRosterCount { get; set; }
 
 	}
 }
