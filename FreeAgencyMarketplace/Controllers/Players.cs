@@ -34,11 +34,11 @@ namespace FreeAgencyMarketplace.Controllers
 			//	new Player{ Id = 3, Age = 22, IsFreeAgent = false, Name = "Justin Fields", Position = "Quarterback"}
 			//};
 
-			var players = _context.Players.ToList();
+			//var players = _context.Players.ToList();
 
-			ViewBag.title = "Players";
+			//ViewBag.title = "Players";
 
-			return View(players);
+			return View(/*players*/);
 		}
 
 		public IActionResult Create()

@@ -34,11 +34,11 @@ namespace FreeAgencyMarketplace.Controllers
 			//	new Team {Name = "Eagles", City = "Philadelphia", Stadium = "Lincoln Financial", Division = "East", Conference = "NFC", Id = 4},
 			//};
 
-			var teams = _context.Teams.ToList();
+			//var teams = _context.Teams.ToList();
 
-			ViewBag.title = "Teams";
+			//ViewBag.title = "Teams";
 
-			return View(teams);
+			return View(/*teams*/);
 		}
 	}
 }

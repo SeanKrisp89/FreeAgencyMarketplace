@@ -6,6 +6,7 @@ using System.Text;
 using FreeAgencyMarketplace.Models;
 using Microsoft.Extensions.Configuration;
 
+
 namespace FreeAgencyMarketplace.Data
 {
 	public class ApplicationDbContext : DbContext
@@ -34,11 +35,12 @@ namespace FreeAgencyMarketplace.Data
 		//So in .NET Core MVC, we need to add our models to the ApplicationDbContext.cs file in order to generate the DB (just like in our .NET Framework tutorial)
 		public DbSet<Player> Players { get; set; }
 		public DbSet<Team> Teams { get; set; }
-		public DbSet<Contract> Contracts { get; set; }
+		//public DbSet<Contract> Contracts { get; set; }
 
 		//So apparently this is how you seed your database with EF Core now. You need to override the OnModelCreating method and pass in an object of that entity type (as opposed to straight up Sql() statements/methods)
 		protected override void OnModelCreating(ModelBuilder builder)//This method is called when the model for a derived context has been initialized, but before the model has been locked down and used to initialize the context. The default implementation of this method does nothing, but it can be overriden in a derived class such that the model can be further configured before it is locked down.
 		{
+
 			base.OnModelCreating(builder); //Not sure why that youtube tutorial had us remove the call to the base...
 
 			builder.Entity<Player>().HasData(
@@ -48,8 +50,8 @@ namespace FreeAgencyMarketplace.Data
 						Name = "Justin Fields",
 						Position = "Quarterback",
 						Age = 22,
-						IsFreeAgent = false
-						
+						IsFreeAgent = false,
+						TeamId = 1
 					},
 					new Player()
 					{
@@ -57,8 +59,8 @@ namespace FreeAgencyMarketplace.Data
 						Name = "Roquan Smith",
 						Position = "Middle Linebacker",
 						Age = 25,
-						IsFreeAgent = false
-						
+						IsFreeAgent = false,
+						TeamId = 1
 					},
 					new Player()
 					{
@@ -66,8 +68,8 @@ namespace FreeAgencyMarketplace.Data
 						Name = "Byron Murphy",
 						Position = "Cornerback",
 						Age = 29,
-						IsFreeAgent = false
-						
+						IsFreeAgent = false,
+						TeamId = 2
 					},
 					new Player()
 					{
@@ -75,8 +77,8 @@ namespace FreeAgencyMarketplace.Data
 						Name = "Aaron Donald",
 						Position = "Defensive Tackle",
 						Age = 30,
-						IsFreeAgent = false
-						
+						IsFreeAgent = false,
+						TeamId = 7
 					},
 					new Player()
 					{
@@ -84,8 +86,8 @@ namespace FreeAgencyMarketplace.Data
 						Name = "Cooper Kupp",
 						Position = "Wide Receiver",
 						Age = 26,
-						IsFreeAgent = false
-						
+						IsFreeAgent = false,
+						TeamId = 7
 					},
 					new Player()
 					{
@@ -93,8 +95,8 @@ namespace FreeAgencyMarketplace.Data
 						Name = "Austin Ekeler",
 						Position = "Runningback",
 						Age = 27,
-						IsFreeAgent = false
-						
+						IsFreeAgent = false,
+						TeamId = 3
 					},
 					new Player()
 					{
@@ -102,8 +104,8 @@ namespace FreeAgencyMarketplace.Data
 						Name = "Fred Warner",
 						Position = "Middle Linebacker",
 						Age = 25,
-						IsFreeAgent = false
-						
+						IsFreeAgent = false,
+						TeamId = 4
 					},
 					new Player()
 					{
@@ -111,8 +113,8 @@ namespace FreeAgencyMarketplace.Data
 						Name = "J.J. Watt",
 						Position = "Outside Linebacker",
 						Age = 27,
-						IsFreeAgent = false
-						
+						IsFreeAgent = false,
+						TeamId = 5
 					},
 					new Player()
 					{
@@ -120,8 +122,8 @@ namespace FreeAgencyMarketplace.Data
 						Name = "Nick Bosa",
 						Position = "Defensive End",
 						Age = 28,
-						IsFreeAgent = false
-						
+						IsFreeAgent = false,
+						TeamId = 4
 					},
 					new Player()
 					{
@@ -129,8 +131,35 @@ namespace FreeAgencyMarketplace.Data
 						Name = "Jamaal Adams",
 						Position = "Free Safety",
 						Age = 28,
-						IsFreeAgent = false
-						
+						IsFreeAgent = false,
+						TeamId = 6
+					},
+					new Player()
+					{
+						Id = 11,
+						Name = "Jalen Hurts",
+						Position = "Quarterback",
+						Age = 22,
+						IsFreeAgent = false,
+						TeamId = 8
+					},
+					new Player()
+					{
+						Id = 12,
+						Name = "T.J. Hockenson",
+						Position = "Tight End",
+						Age = 24,
+						IsFreeAgent = false,
+						TeamId = 9
+					},
+					new Player()
+					{
+						Id = 13,
+						Name = "Alvin Kamara",
+						Position = "Running back",
+						Age = 28,
+						IsFreeAgent = false,
+						TeamId = 10
 					}
 				);
 
@@ -147,47 +176,47 @@ namespace FreeAgencyMarketplace.Data
 					new Team()
 					{
 						Id = 2,
-						Name = "Chiefs",
-						Division = "West",
+						Name = "Dolphins",
+						Division = "East",
 						Conference = "AFC",
-						Stadium = "Arrowhead",
-						City = "Kansas City"
+						Stadium = "Hard Rock Stadium",
+						City = "Miami"
 					},
 					new Team()
 					{
 						Id = 3,
-						Name = "Buccaneers",
-						Division = "South",
-						Conference = "NFC",
-						Stadium = "Raymond James",
-						City = "Tampa Bay"
+						Name = "Chargers",
+						Division = "West",
+						Conference = "AFC",
+						Stadium = "SoFi Stadium",
+						City = "Los Angeles"
 					},
 					new Team()
 					{
 						Id = 4,
-						Name = "Patriots",
-						Division = "East",
-						Conference = "AFC",
-						Stadium = "Gillette Stadium",
-						City = "Boston"
+						Name = "49ers",
+						Division = "West",
+						Conference = "NFC",
+						Stadium = "Levi's Stadium",
+						City = "San Francisco"
 					},
 					new Team()
 					{
 						Id = 5,
-						Name = "Bengals",
+						Name = "Steelers",
 						Division = "North",
 						Conference = "AFC",
-						Stadium = "Paul Brown Stadium",
-						City = "Cincinnati"
+						Stadium = "Heinz Field",
+						City = "Pittsburgh"
 					},
 					new Team()
 					{
 						Id = 6,
-						Name = "Titans",
-						Division = "South",
-						Conference = "AFC",
-						Stadium = "Nissan Stadium",
-						City = "Nashville"
+						Name = "Seahawks",
+						Division = "West",
+						Conference = "NFC",
+						Stadium = "Century Link Stadium",
+						City = "Seattle"
 					},
 					new Team()
 					{

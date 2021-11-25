@@ -4,14 +4,16 @@ using FreeAgencyMarketplace.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace FreeAgencyMarketplace.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20211125161053_SeedPlayersAndTeamsTables")]
+    partial class SeedPlayersAndTeamsTables
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -75,7 +77,7 @@ namespace FreeAgencyMarketplace.Data.Migrations
                             IsFreeAgent = false,
                             Name = "Byron Murphy",
                             Position = "Cornerback",
-                            TeamId = 2
+                            TeamId = 1
                         },
                         new
                         {
@@ -84,7 +86,7 @@ namespace FreeAgencyMarketplace.Data.Migrations
                             IsFreeAgent = false,
                             Name = "Aaron Donald",
                             Position = "Defensive Tackle",
-                            TeamId = 7
+                            TeamId = 1
                         },
                         new
                         {
@@ -93,7 +95,7 @@ namespace FreeAgencyMarketplace.Data.Migrations
                             IsFreeAgent = false,
                             Name = "Cooper Kupp",
                             Position = "Wide Receiver",
-                            TeamId = 7
+                            TeamId = 1
                         },
                         new
                         {
@@ -102,7 +104,7 @@ namespace FreeAgencyMarketplace.Data.Migrations
                             IsFreeAgent = false,
                             Name = "Austin Ekeler",
                             Position = "Runningback",
-                            TeamId = 3
+                            TeamId = 1
                         },
                         new
                         {
@@ -111,7 +113,7 @@ namespace FreeAgencyMarketplace.Data.Migrations
                             IsFreeAgent = false,
                             Name = "Fred Warner",
                             Position = "Middle Linebacker",
-                            TeamId = 4
+                            TeamId = 1
                         },
                         new
                         {
@@ -120,7 +122,7 @@ namespace FreeAgencyMarketplace.Data.Migrations
                             IsFreeAgent = false,
                             Name = "J.J. Watt",
                             Position = "Outside Linebacker",
-                            TeamId = 5
+                            TeamId = 1
                         },
                         new
                         {
@@ -129,7 +131,7 @@ namespace FreeAgencyMarketplace.Data.Migrations
                             IsFreeAgent = false,
                             Name = "Nick Bosa",
                             Position = "Defensive End",
-                            TeamId = 4
+                            TeamId = 1
                         },
                         new
                         {
@@ -138,34 +140,7 @@ namespace FreeAgencyMarketplace.Data.Migrations
                             IsFreeAgent = false,
                             Name = "Jamaal Adams",
                             Position = "Free Safety",
-                            TeamId = 6
-                        },
-                        new
-                        {
-                            Id = 11,
-                            Age = 22,
-                            IsFreeAgent = false,
-                            Name = "Jalen Hurts",
-                            Position = "Quarterback",
-                            TeamId = 8
-                        },
-                        new
-                        {
-                            Id = 12,
-                            Age = 24,
-                            IsFreeAgent = false,
-                            Name = "T.J. Hockenson",
-                            Position = "Tight End",
-                            TeamId = 9
-                        },
-                        new
-                        {
-                            Id = 13,
-                            Age = 28,
-                            IsFreeAgent = false,
-                            Name = "Alvin Kamara",
-                            Position = "Running back",
-                            TeamId = 10
+                            TeamId = 1
                         });
                 });
 
@@ -216,47 +191,47 @@ namespace FreeAgencyMarketplace.Data.Migrations
                         new
                         {
                             Id = 2,
-                            City = "Miami",
+                            City = "Kansas City",
                             Conference = "AFC",
-                            Division = "East",
-                            Name = "Dolphins",
-                            Stadium = "Hard Rock Stadium"
+                            Division = "West",
+                            Name = "Chiefs",
+                            Stadium = "Arrowhead"
                         },
                         new
                         {
                             Id = 3,
-                            City = "Los Angeles",
-                            Conference = "AFC",
-                            Division = "West",
-                            Name = "Chargers",
-                            Stadium = "SoFi Stadium"
+                            City = "Tampa Bay",
+                            Conference = "NFC",
+                            Division = "South",
+                            Name = "Buccaneers",
+                            Stadium = "Raymond James"
                         },
                         new
                         {
                             Id = 4,
-                            City = "San Francisco",
-                            Conference = "NFC",
-                            Division = "West",
-                            Name = "49ers",
-                            Stadium = "Levi's Stadium"
+                            City = "Boston",
+                            Conference = "AFC",
+                            Division = "East",
+                            Name = "Patriots",
+                            Stadium = "Gillette Stadium"
                         },
                         new
                         {
                             Id = 5,
-                            City = "Pittsburgh",
+                            City = "Cincinnati",
                             Conference = "AFC",
                             Division = "North",
-                            Name = "Steelers",
-                            Stadium = "Heinz Field"
+                            Name = "Bengals",
+                            Stadium = "Paul Brown Stadium"
                         },
                         new
                         {
                             Id = 6,
-                            City = "Seattle",
-                            Conference = "NFC",
-                            Division = "West",
-                            Name = "Seahawks",
-                            Stadium = "Century Link Stadium"
+                            City = "Nashville",
+                            Conference = "AFC",
+                            Division = "South",
+                            Name = "Titans",
+                            Stadium = "Nissan Stadium"
                         },
                         new
                         {
