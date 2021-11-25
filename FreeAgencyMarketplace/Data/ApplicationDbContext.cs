@@ -49,6 +49,7 @@ namespace FreeAgencyMarketplace.Data
 						Position = "Quarterback",
 						Age = 22,
 						IsFreeAgent = false
+						
 					},
 					new Player()
 					{
@@ -57,6 +58,7 @@ namespace FreeAgencyMarketplace.Data
 						Position = "Middle Linebacker",
 						Age = 25,
 						IsFreeAgent = false
+						
 					},
 					new Player()
 					{
@@ -65,6 +67,7 @@ namespace FreeAgencyMarketplace.Data
 						Position = "Cornerback",
 						Age = 29,
 						IsFreeAgent = false
+						
 					},
 					new Player()
 					{
@@ -73,6 +76,7 @@ namespace FreeAgencyMarketplace.Data
 						Position = "Defensive Tackle",
 						Age = 30,
 						IsFreeAgent = false
+						
 					},
 					new Player()
 					{
@@ -81,6 +85,7 @@ namespace FreeAgencyMarketplace.Data
 						Position = "Wide Receiver",
 						Age = 26,
 						IsFreeAgent = false
+						
 					},
 					new Player()
 					{
@@ -89,6 +94,7 @@ namespace FreeAgencyMarketplace.Data
 						Position = "Runningback",
 						Age = 27,
 						IsFreeAgent = false
+						
 					},
 					new Player()
 					{
@@ -97,6 +103,7 @@ namespace FreeAgencyMarketplace.Data
 						Position = "Middle Linebacker",
 						Age = 25,
 						IsFreeAgent = false
+						
 					},
 					new Player()
 					{
@@ -105,6 +112,7 @@ namespace FreeAgencyMarketplace.Data
 						Position = "Outside Linebacker",
 						Age = 27,
 						IsFreeAgent = false
+						
 					},
 					new Player()
 					{
@@ -113,6 +121,7 @@ namespace FreeAgencyMarketplace.Data
 						Position = "Defensive End",
 						Age = 28,
 						IsFreeAgent = false
+						
 					},
 					new Player()
 					{
@@ -121,6 +130,7 @@ namespace FreeAgencyMarketplace.Data
 						Position = "Free Safety",
 						Age = 28,
 						IsFreeAgent = false
+						
 					}
 				);
 

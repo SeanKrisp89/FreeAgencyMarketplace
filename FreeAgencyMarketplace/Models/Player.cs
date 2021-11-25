@@ -16,5 +16,6 @@ namespace FreeAgencyMarketplace.Models
 		[Required]
 		public int Age { get; set; }
 		public bool IsFreeAgent { get; set; }
+
 	}
 }

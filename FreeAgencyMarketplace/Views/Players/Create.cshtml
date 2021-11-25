@@ -1,0 +1,11 @@
+﻿@model FreeAgencyMarketplace.Models.Player
+
+<h2>@ViewBag.title</h2>
+
+@using (Html.BeginForm("Save", "Players"))
+	{
+		<div class="form-group">
+			@Html.LabelFor(p => p.Name)
+			@Html.TextBoxFor(p => p.Name)
+		</div>
+	}

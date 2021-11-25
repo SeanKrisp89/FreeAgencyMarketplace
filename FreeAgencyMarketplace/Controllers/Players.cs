@@ -40,5 +40,12 @@ namespace FreeAgencyMarketplace.Controllers
 
 			return View(players);
 		}
+
+		public IActionResult Create()
+		{
+			ViewBag.title = "Add Player";
+
+			return View();
+		}
 	}
 }
