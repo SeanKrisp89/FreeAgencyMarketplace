@@ -2,6 +2,34 @@
 	  asp-controller="Images"
 	  method="post"
 	  enctype="multipart/form-data">
-	<input type="file" id="file1" name="file1" multiple="multiple" />
-	<button type="submit">Upload File(s)</button>
+	<div class="input-group mb-3">
+		<div class="input-group-prepend">
+			<button class="btn btn-primary" type="submit">Upload</button>
+		</div>
+		<div class="custom-file">
+			<input type="file" class="custom-file-input" name="file!" id="file1" multiple="multiple">
+			<label class="custom-file-label" for="file1">Choose file</label>
+		</div>
+	</div>
 </form>
+
+<h3>@ViewBag.Message</h3>
+
+<form asp-action="RetrieveLastestImage" asp-controller="Images" method="get">
+	<button type="submit" class="btn btn-primary">Show Latest Image</button>
+</form>
+
+<h1>@ViewBag.ImageTitle</h1>
+<img src="@ViewBag.ImageDataUrl" style="width: 100%;"/>
+
+@section scripts{ 
+	<script>
+		$(document).ready(function () {
+			$("#file1").on("change", function () {
+				var fileName = $(this).val();
+				$(".custom-file-label").html(fileName);
+			})
+		})
+	</script>
+}
+

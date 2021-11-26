@@ -22,7 +22,7 @@ namespace FreeAgencyMarketplace.Controllers
 		{
 			return View();
 		}
-
+        [HttpPost]
 		public IActionResult UploadImage()
 		{
             foreach (var file in Request.Form.Files)
@@ -41,9 +41,22 @@ namespace FreeAgencyMarketplace.Controllers
                 _context.SaveChanges();
             }
 
-            ViewBag.Message = "Image(s) stored in database!";
+            ViewBag.Message = "Image stored in database!";
 
             return View("Index");
         }
-	}
+
+        [HttpGet]
+        public ActionResult RetrieveLatestImage()
+        {
+            Image img = _context.Images.ToList().Last();//First, the code grabs a latest Image added to the database using SingleOrDefault() method. We want the LATEST because the one we just added is by default the latest.
+
+            string imageBase64Data = Convert.ToBase64String(img.ImageData); //This image is is the form of a byte array and can't be displayed on the view directly. So, the code converts the byte array into Base64 encoded string.
+            string imageDataURL = string.Format("data:image/jpg;base64,{0}", imageBase64Data);
+            ViewBag.ImageTitle = img.ImageTitle;
+            ViewBag.ImageDataUrl = imageDataURL; //The image data URL is stored in ViewBag's ImageDataUrl property
+
+            return View("Index");
+        }
+    }
 }
