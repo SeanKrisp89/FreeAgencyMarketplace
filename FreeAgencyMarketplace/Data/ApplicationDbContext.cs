@@ -35,6 +35,7 @@ namespace FreeAgencyMarketplace.Data
 		//So in .NET Core MVC, we need to add our models to the ApplicationDbContext.cs file in order to generate the DB (just like in our .NET Framework tutorial)
 		public DbSet<Player> Players { get; set; }
 		public DbSet<Team> Teams { get; set; }
+		public DbSet<Image> Images { get; set; }
 		//public DbSet<Contract> Contracts { get; set; }
 
 		//So apparently this is how you seed your database with EF Core now. You need to override the OnModelCreating method and pass in an object of that entity type (as opposed to straight up Sql() statements/methods)

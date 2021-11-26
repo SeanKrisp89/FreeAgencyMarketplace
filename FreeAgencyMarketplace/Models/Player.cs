@@ -18,8 +18,6 @@ namespace FreeAgencyMarketplace.Models
 		public int Age { get; set; }
 		public bool IsFreeAgent { get; set; }
 		public int TeamId { get; set; }
-
-		[ForeignKey("TeamId")]
 		public Team Team { get; set; }
 
 	}
