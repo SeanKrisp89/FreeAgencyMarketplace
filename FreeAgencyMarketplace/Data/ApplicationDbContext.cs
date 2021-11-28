@@ -36,6 +36,8 @@ namespace FreeAgencyMarketplace.Data
 		public DbSet<Player> Players { get; set; }
 		public DbSet<Team> Teams { get; set; }
 		public DbSet<Image> Images { get; set; }
+
+		public DbSet<Position> Positions { get; set; }
 		//public DbSet<Contract> Contracts { get; set; }
 
 		//So apparently this is how you seed your database with EF Core now. You need to override the OnModelCreating method and pass in an object of that entity type (as opposed to straight up Sql() statements/methods)
@@ -254,6 +256,59 @@ namespace FreeAgencyMarketplace.Data
 						Conference = "NFC",
 						Stadium = "Cesars Superdome",
 						City = "New Orleans"
+					}
+				);
+
+			builder.Entity<Position>().HasData(
+					new Position()
+					{
+						Id = 1,
+						Name = "Quarterback"
+					},
+					new Position()
+					{
+						Id = 2,
+						Name = "Running back"
+					},
+					new Position()
+					{
+						Id = 3, 
+						Name = "Wide Receiver"
+					},
+					new Position()
+					{
+						Id = 4,
+						Name = "Tight End"
+					},
+					new Position()
+					{
+						Id = 5,
+						Name = "Cornerback"
+					},
+					new Position()
+					{
+						Id = 6,
+						Name = "Outside Linebacker"
+					},
+					new Position()
+					{
+						Id = 7,
+						Name = "Middle Linebacker"
+					},
+					new Position()
+					{
+						Id = 8,
+						Name = "Defenseive End"
+					},
+					new Position()
+					{
+						Id = 9,
+						Name = "Safety"
+					},
+					new Position()
+					{
+						Id = 10,
+						Name = "Defensive Tacke"
 					}
 				);
 		}
