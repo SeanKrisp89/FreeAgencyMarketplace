@@ -1,0 +1,15 @@
+﻿@model FreeAgencyMarketplace.Models.Team
+
+<h2>@Model.Name</h2>
+
+<ul>
+	<li>@Model.City</li>
+	<li>@Model.Division</li>
+	<li>@Model.Conference</li>
+	<li>@Model.Stadium</li>
+	@if (Model.ActiveRosterCount > 0)
+	{
+		<li>@Model.ActiveRosterCount</li>
+	}
+
+</ul>

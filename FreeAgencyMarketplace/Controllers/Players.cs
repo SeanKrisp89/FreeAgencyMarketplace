@@ -34,7 +34,7 @@ namespace FreeAgencyMarketplace.Controllers
 			//	new Player{ Id = 3, Age = 22, IsFreeAgent = false, Name = "Justin Fields", Position = "Quarterback"}
 			//};
 
-			var players = _context.Players.Include(p => p.Team).ToList(); //Remember, we made the 
+			var players = _context.Players.Include(p => p.Team).ToList();
 
 			ViewBag.title = "Players";
 
