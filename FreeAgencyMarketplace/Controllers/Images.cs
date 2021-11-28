@@ -22,6 +22,7 @@ namespace FreeAgencyMarketplace.Controllers
 		{
 			return View();
 		}
+
         [HttpPost]
 		public IActionResult UploadImage()
 		{
@@ -47,7 +48,7 @@ namespace FreeAgencyMarketplace.Controllers
         }
 
         [HttpGet]
-        public ActionResult RetrieveLatestImage()
+        public IActionResult RetrieveLatestImage()
         {
             Image img = _context.Images.ToList().Last();//First, the code grabs a latest Image added to the database using SingleOrDefault() method. We want the LATEST because the one we just added is by default the latest.
 
@@ -58,5 +59,16 @@ namespace FreeAgencyMarketplace.Controllers
 
             return View("Index");
         }
-    }
+
+		//public IActionResult GetSpecificImage(int id)
+		//{
+  //          var imageList = new List<Image>();
+
+  //          var image = _context.Images.Where(i => i.Id == id).SingleOrDefault();
+
+  //          imageList.Add(image);
+
+  //          return View("Index", imageList);
+		//}
+	}
 }
