@@ -6,6 +6,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using FreeAgencyMarketplace.Models;
 using FreeAgencyMarketplace.Data;
+using FreeAgencyMarketplace.ViewModels;
 
 namespace FreeAgencyMarketplace.Controllers
 {
@@ -51,9 +52,19 @@ namespace FreeAgencyMarketplace.Controllers
 
 		public IActionResult Create()
 		{
+			//Need to load all the teams from Db in order to populate dropdown list
+			var teams = _context.Teams.ToList();
+
+			//Pass in empty viewModel object for the form to populate and return (in the save method)
+			var viewModel = new PlayerFormViewModel
+			{
+				Player = new Player(),
+				Teams = teams
+			};
+
 			ViewBag.title = "Add Player";
 
-			return View();
+			return View("Create", viewModel);
 		}
 	}
 }

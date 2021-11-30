@@ -1,32 +1,29 @@
-﻿@model FreeAgencyMarketplace.Models.Player
+﻿@model FreeAgencyMarketplace.ViewModels.PlayerFormViewModel
 
 <h2>@ViewBag.title</h2>
 
 @using (Html.BeginForm("Save", "Players"))
 {
 	<div class="form-group">
-		@Html.LabelFor(p => p.Name)
-		@Html.TextBoxFor(p => p.Name)
+		@Html.LabelFor(p => p.Player.Name)
+		@Html.TextBoxFor(p => p.Player.Name)
 	</div>
 	<div class="form-group">
-		@Html.LabelFor(p => p.Position)
-		@Html.TextBoxFor(p => p.Position)
+		@Html.LabelFor(p => p.Player.Position)
+		@Html.TextBoxFor(p => p.Player.Position)
 	</div>
 	<div class="form-group">
-		@Html.LabelFor(p => p.Age)
-		@Html.TextBoxFor(p => p.Age)
+		@Html.LabelFor(p => p.Player.Age)
+		@Html.TextBoxFor(p => p.Player.Age)
 	</div>
 	<div class="form-group">
-		@Html.LabelFor(p => p.Name)
-		@Html.TextBoxFor(p => p.Name)
+		@Html.LabelFor(p => p.Player.IsFreeAgent)
+		@Html.CheckBoxFor(p => p.Player.IsFreeAgent)
 	</div>
 	<div class="form-group">
-		@Html.LabelFor(p => p.Name)
-		@Html.TextBoxFor(p => p.Name)
+		@Html.LabelFor(p => p.Player.TeamId)
+		@Html.DropDownListFor(p => p.Player.TeamId, new SelectList(Model.Teams, "Id", "Name"), "Select Team", new { @class="form-control" })
 	</div>
-	<div class="form-group">
-		@Html.LabelFor(p => p.Name)
-		@Html.TextBoxFor(p => p.Name)
-	</div>
-	@Html.HiddenFor(p => p.Id)
+	<button type="submit">Save</button>
+	@Html.HiddenFor(p => p.Player.Id)
 }

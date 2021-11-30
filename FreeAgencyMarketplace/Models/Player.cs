@@ -15,8 +15,10 @@ namespace FreeAgencyMarketplace.Models
 		[Required]
 		public string Position { get; set; }
 		[Required]
+		[Range(21, 44)]
 		public int Age { get; set; }
 		public bool IsFreeAgent { get; set; }
+		[Display(Name="Team")]
 		public int TeamId { get; set; }
 		public Team Team { get; set; }
 
