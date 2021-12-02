@@ -6,15 +6,18 @@
 {
 	<div class="form-group">
 		@Html.LabelFor(p => p.Player.Name)
-		@Html.TextBoxFor(p => p.Player.Name)
+		@Html.TextBoxFor(p => p.Player.Name, new { @class = "form-control narrow-width-input" })
+		@Html.ValidationMessageFor(p => p.Player.Name)
 	</div>
 	<div class="form-group">
 		@Html.LabelFor(p => p.Player.Position)
-		@Html.DropDownListFor(p => p.Player.PositionId, new SelectList(Model.Positions, "Id", "Name"), "Select Player Position", new { @class="form-control" })
+		@Html.DropDownListFor(p => p.Player.PositionId, new SelectList(Model.Positions, "Id", "Name"), "Select Player Position", new { @class= "form-control narrow-width-input" })
+		@Html.ValidationMessageFor(p => p.Player.PositionId)
 	</div>
 	<div class="form-group">
 		@Html.LabelFor(p => p.Player.Age)
-		@Html.TextBoxFor(p => p.Player.Age)
+		@Html.TextBoxFor(p => p.Player.Age, new { @class = "form-control narrow-width-input", @type = "number"})
+		@Html.ValidationMessageFor(p => p.Player.Age)
 	</div>
 	<div class="form-group">
 		@Html.LabelFor(p => p.Player.IsFreeAgent)
@@ -22,8 +25,15 @@
 	</div>
 	<div class="form-group">
 		@Html.LabelFor(p => p.Player.TeamId)
-		@Html.DropDownListFor(p => p.Player.TeamId, new SelectList(Model.Teams, "Id", "Name"), "Select Team", new { @class="form-control" })
+		@Html.DropDownListFor(p => p.Player.TeamId, new SelectList(Model.Teams, "Id", "Name"), "Select Team", new { @class= "form-control narrow-width-input" })
+		@Html.ValidationMessageFor(p => p.Player.TeamId)
 	</div>
 	<button type="submit" class="btn btn-primary">Save</button>
 	@Html.HiddenFor(p => p.Player.Id)
+}
+
+@section Scripts{ 
+
+	@await Html.PartialAsync("_ValidationScriptsPartial.cshtml")
+
 }

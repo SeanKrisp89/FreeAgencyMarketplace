@@ -70,6 +70,7 @@ namespace FreeAgencyMarketplace.Controllers
 			return View("Create", viewModel);
 		}
 
+		[HttpPost]
 		public ActionResult Save(Player player)
 		{
 			//check that model is valid
