@@ -51,7 +51,7 @@ namespace FreeAgencyMarketplace.Data
 					{
 						Id = 1,
 						Name = "Justin Fields",
-						Position = "Quarterback",
+						PositionId = 1,
 						Age = 22,
 						IsFreeAgent = false,
 						TeamId = 1
@@ -60,7 +60,7 @@ namespace FreeAgencyMarketplace.Data
 					{
 						Id = 2,
 						Name = "Roquan Smith",
-						Position = "Middle Linebacker",
+						PositionId = 7,
 						Age = 25,
 						IsFreeAgent = false,
 						TeamId = 1
@@ -69,7 +69,7 @@ namespace FreeAgencyMarketplace.Data
 					{
 						Id = 3,
 						Name = "Byron Murphy",
-						Position = "Cornerback",
+						PositionId = 5,
 						Age = 29,
 						IsFreeAgent = false,
 						TeamId = 2
@@ -78,7 +78,7 @@ namespace FreeAgencyMarketplace.Data
 					{
 						Id = 4,
 						Name = "Aaron Donald",
-						Position = "Defensive Tackle",
+						PositionId = 10,
 						Age = 30,
 						IsFreeAgent = false,
 						TeamId = 7
@@ -87,7 +87,7 @@ namespace FreeAgencyMarketplace.Data
 					{
 						Id = 5,
 						Name = "Cooper Kupp",
-						Position = "Wide Receiver",
+						PositionId = 3,
 						Age = 26,
 						IsFreeAgent = false,
 						TeamId = 7
@@ -96,7 +96,7 @@ namespace FreeAgencyMarketplace.Data
 					{
 						Id = 6,
 						Name = "Austin Ekeler",
-						Position = "Runningback",
+						PositionId = 2,
 						Age = 27,
 						IsFreeAgent = false,
 						TeamId = 3
@@ -105,7 +105,7 @@ namespace FreeAgencyMarketplace.Data
 					{
 						Id = 7,
 						Name = "Fred Warner",
-						Position = "Middle Linebacker",
+						PositionId = 7,
 						Age = 25,
 						IsFreeAgent = false,
 						TeamId = 4
@@ -114,7 +114,7 @@ namespace FreeAgencyMarketplace.Data
 					{
 						Id = 8,
 						Name = "J.J. Watt",
-						Position = "Outside Linebacker",
+						PositionId = 6,
 						Age = 27,
 						IsFreeAgent = false,
 						TeamId = 5
@@ -123,7 +123,7 @@ namespace FreeAgencyMarketplace.Data
 					{
 						Id = 9,
 						Name = "Nick Bosa",
-						Position = "Defensive End",
+						PositionId = 8,
 						Age = 28,
 						IsFreeAgent = false,
 						TeamId = 4
@@ -132,7 +132,7 @@ namespace FreeAgencyMarketplace.Data
 					{
 						Id = 10,
 						Name = "Jamaal Adams",
-						Position = "Free Safety",
+						PositionId = 9,
 						Age = 28,
 						IsFreeAgent = false,
 						TeamId = 6
@@ -141,7 +141,7 @@ namespace FreeAgencyMarketplace.Data
 					{
 						Id = 11,
 						Name = "Jalen Hurts",
-						Position = "Quarterback",
+						PositionId = 1,
 						Age = 22,
 						IsFreeAgent = false,
 						TeamId = 8
@@ -150,7 +150,7 @@ namespace FreeAgencyMarketplace.Data
 					{
 						Id = 12,
 						Name = "T.J. Hockenson",
-						Position = "Tight End",
+						PositionId = 4,
 						Age = 24,
 						IsFreeAgent = false,
 						TeamId = 9
@@ -159,7 +159,7 @@ namespace FreeAgencyMarketplace.Data
 					{
 						Id = 13,
 						Name = "Alvin Kamara",
-						Position = "Running back",
+						PositionId = 2,
 						Age = 28,
 						IsFreeAgent = false,
 						TeamId = 10

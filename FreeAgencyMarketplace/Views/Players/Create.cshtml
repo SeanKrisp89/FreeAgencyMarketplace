@@ -10,7 +10,7 @@
 	</div>
 	<div class="form-group">
 		@Html.LabelFor(p => p.Player.Position)
-		@Html.TextBoxFor(p => p.Player.Position)
+		@Html.DropDownListFor(p => p.Player.PositionId, new SelectList(Model.Positions, "Id", "Name"), "Select Player Position", new { @class="form-control" })
 	</div>
 	<div class="form-group">
 		@Html.LabelFor(p => p.Player.Age)
@@ -24,6 +24,6 @@
 		@Html.LabelFor(p => p.Player.TeamId)
 		@Html.DropDownListFor(p => p.Player.TeamId, new SelectList(Model.Teams, "Id", "Name"), "Select Team", new { @class="form-control" })
 	</div>
-	<button type="submit">Save</button>
+	<button type="submit" class="btn btn-primary">Save</button>
 	@Html.HiddenFor(p => p.Player.Id)
 }

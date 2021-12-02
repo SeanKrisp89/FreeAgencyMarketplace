@@ -9,6 +9,7 @@ namespace FreeAgencyMarketplace.ViewModels
 	public class PlayerFormViewModel
 	{
 		public IEnumerable<Team> Teams { get; set; }
+		public IEnumerable<Position> Positions { get; set; }
 		public Player Player { get; set; }
 	}
 }

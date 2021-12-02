@@ -10,10 +10,11 @@ namespace FreeAgencyMarketplace.Models
 	public class Player
 	{
 		public int Id { get; set; }
-		[Required]
+		[Required(ErrorMessage = "Please enter the player's name.")]
 		public string Name { get; set; }
 		[Required]
-		public string Position { get; set; }
+		public int PositionId { get; set; }
+		public Position Position { get; set; }
 		[Required]
 		[Range(21, 44)]
 		public int Age { get; set; }

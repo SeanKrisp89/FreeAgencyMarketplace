@@ -50,21 +50,52 @@ namespace FreeAgencyMarketplace.Controllers
 			return View(player);
 		}
 
-		public IActionResult Create()
+		public ActionResult Create()
 		{
 			//Need to load all the teams from Db in order to populate dropdown list
 			var teams = _context.Teams.ToList();
+
+			var positions = _context.Positions.ToList();
 
 			//Pass in empty viewModel object for the form to populate and return (in the save method)
 			var viewModel = new PlayerFormViewModel
 			{
 				Player = new Player(),
+				Positions = positions,
 				Teams = teams
 			};
 
 			ViewBag.title = "Add Player";
 
 			return View("Create", viewModel);
+		}
+
+		public ActionResult Save(Player player)
+		{
+			//check that model is valid
+			if (!ModelState.IsValid)
+			{
+				//if not, instantiate new empty model and pass in to view
+				var viewModel = new PlayerFormViewModel
+				{
+					Player = player,
+					Teams = _context.Teams.ToList(),
+					Positions = _context.Positions.ToList()
+				};
+
+				return View("Create", viewModel);
+			}
+
+			if(player.Id == 0) //New players will have an Id of zero since by default integers are initialized to zero (Player Id is an integer)
+			{
+				//So add to DbContext
+				_context.Players.Add(player);
+			}
+
+			//eventually we'll need to add an else statement for an existing player. It'll be an existing player when we are EDITING a player.
+			_context.SaveChanges();
+
+			return RedirectToAction("Index", "Players");
 		}
 	}
 }
