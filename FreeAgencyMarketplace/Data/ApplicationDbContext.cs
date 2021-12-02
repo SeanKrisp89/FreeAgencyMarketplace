@@ -308,7 +308,7 @@ namespace FreeAgencyMarketplace.Data
 					new Position()
 					{
 						Id = 10,
-						Name = "Defensive Tacke"
+						Name = "Defensive Tackel"
 					}
 				);
 		}

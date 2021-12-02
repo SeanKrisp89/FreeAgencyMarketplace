@@ -25,15 +25,6 @@ namespace FreeAgencyMarketplace.Controllers
 
 		public IActionResult Index()
 		{
-			////Hardcoded prior to use of DB
-			//var teams = new List<Team>
-			//{
-			//	new Team {Name = "Bears", City = "Chicago", Stadium = "Soldier Field", Division = "North", Conference = "NFC", Id = 1},
-			//	new Team {Name = "Saints", City = "New Orleans", Stadium = "Cesar Superdome", Division = "South", Conference = "NFC", Id = 2},
-			//	new Team {Name = "Rams", City = "Los Angeles", Stadium = "SoFi Stadium", Division = "Wes3", Conference = "NFC", Id = 1},
-			//	new Team {Name = "Eagles", City = "Philadelphia", Stadium = "Lincoln Financial", Division = "East", Conference = "NFC", Id = 4},
-			//};
-
 			var teams = _context.Teams.ToList();
 
 			ViewBag.title = "Teams";
@@ -46,6 +37,32 @@ namespace FreeAgencyMarketplace.Controllers
 			var team = _context.Teams.SingleOrDefault(t => t.Id == id);
 
 			return View(team);
+		}
+
+		public IActionResult Create()
+		{
+			var viewModel = new Team();
+
+			ViewBag.title = "Add New Team";
+
+			return View("Create", viewModel);
+		}
+
+		public IActionResult Save(Team team)
+		{
+			if (!ModelState.IsValid)
+			{
+				return RedirectToAction("Create", team);
+			}
+
+			if(team.Id == 0)
+			{
+				_context.Teams.Add(team);
+			}
+
+			_context.SaveChanges();
+
+			return RedirectToAction("Index", "Teams");
 		}
 	}
 }

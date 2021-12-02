@@ -1,0 +1,45 @@
+﻿@model FreeAgencyMarketplace.Models.Team
+
+<h2>@ViewBag.title</h2>
+
+@using (Html.BeginForm("Save", "Teams"))
+{
+	<div class="form-group">
+		@Html.LabelFor(t => t.Name)
+		@Html.TextBoxFor(t => t.Name, new { @class = "form-control narrow-width-input" }) 
+		@Html.ValidationMessageFor(t => t.Name)
+	</div>
+	<div class="form-group">
+		@Html.LabelFor(t => t.Division)
+		@Html.TextBoxFor(t => t.Division, new { @class = "form-control narrow-width-input" })
+		@Html.ValidationMessageFor(t => t.Division)
+	</div>
+	<div class="form-group">
+		@Html.LabelFor(t => t.Conference)
+		@Html.TextBoxFor(t => t.Conference, new { @class = "form-control narrow-width-input" })
+		@Html.ValidationMessageFor(t => t.Conference)
+	</div>
+	<div class="form-group">
+		@Html.LabelFor(t => t.Stadium)
+		@Html.TextBoxFor(t => t.Stadium, new { @class = "form-control narrow-width-input" })
+		@Html.ValidationMessageFor(t => t.Stadium)
+	</div>
+	<div class="form-group">
+		@Html.LabelFor(t => t.City)
+		@Html.TextBoxFor(t => t.City, new { @class = "form-control narrow-width-input" })
+		@Html.ValidationMessageFor(t => t.City)
+	</div>
+	<div class="form-group">
+		@Html.LabelFor(t => t.ActiveRosterCount)
+		@Html.TextBoxFor(t => t.ActiveRosterCount, new { @class = "form-control narrow-width-input", @type="number" })
+		@Html.ValidationMessageFor(t => t.ActiveRosterCount)
+	</div>
+	<button type="submit" class="btn btn-primary">Save</button>
+	@Html.HiddenFor(t => t.Id)
+}
+
+@section Scripts{ 
+
+@await Html.PartialAsync("_ValidationScriptsPartial.cshtml") 
+
+}
