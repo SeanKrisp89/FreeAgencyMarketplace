@@ -10,6 +10,7 @@ namespace FreeAgencyMarketplace.Models
 	{
 		public int Id { get; set; }
 		[Required(ErrorMessage = "Please enter a team name")]
+		[StringLength(50, MinimumLength = 5)]
 		public string Name { get; set; }
 		[Required(ErrorMessage = "Please enter the team division")]
 		public string Division { get; set; }
@@ -17,7 +18,8 @@ namespace FreeAgencyMarketplace.Models
 		public string Conference { get; set; }
 		[Required(ErrorMessage = "Please enter the team stadium")]
 		public string Stadium { get; set; }
-		[Required(ErrorMessage = "Please enter the team city")]
+		[Required(ErrorMessage = "Please enter the team location")]
+		[Display(Name = "Team Location")]
 		public string City { get; set; }
 		[Range(42, 53)]
 		public byte? ActiveRosterCount { get; set; }

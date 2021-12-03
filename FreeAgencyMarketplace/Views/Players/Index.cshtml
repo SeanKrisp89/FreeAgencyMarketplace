@@ -9,17 +9,31 @@
 		<th>Team</th>
 		<th>Age</th>
 		<th>Free Agent Status</th>
+		<th>Delete Player?</th>
 	</tr>
 
 	@foreach (var player in Model)
 	{
 		<tr>
-			<td>@Html.ActionLink(player.Name, "Details", "Players", new { id = player.Id }, new { @class="color: green;" })</td> <!--We have to pass the Id of the player, so an anonymous object....-->
-			<td>@player.Position</td>
+			<td>@Html.ActionLink(player.Name, "Details", "Players", new { id = player.Id }, null)</td> <!--We have to pass the Id of the player, so an anonymous object....-->
+			<td>@player.Position.Name</td>
 			<td>@player.Team.Name</td>
 			<td>@player.Age</td>
 			<td>@player.IsFreeAgent</td>
+			<td id="delete">@Html.ActionLink("Delete", "Delete", "Players", new { id = player.Id }, null)</td>
 		</tr>
 	}
 
 </table>
+
+@section Scripts{ 
+
+	@*<script>
+		$(document).ready(function () {
+			$("#delete").on("click", function () {
+				$(this).alert("ah!");
+			})
+		})
+	</script>*@
+
+}

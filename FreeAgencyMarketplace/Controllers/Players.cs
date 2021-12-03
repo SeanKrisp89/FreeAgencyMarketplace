@@ -35,7 +35,7 @@ namespace FreeAgencyMarketplace.Controllers
 			//	new Player{ Id = 3, Age = 22, IsFreeAgent = false, Name = "Justin Fields", Position = "Quarterback"}
 			//};
 
-			var players = _context.Players.Include(p => p.Team).ToList();
+			var players = _context.Players.Include(p => p.Team).Include(p => p.Position).ToList();
 
 			ViewBag.title = "Players";
 
@@ -94,6 +94,16 @@ namespace FreeAgencyMarketplace.Controllers
 			}
 
 			//eventually we'll need to add an else statement for an existing player. It'll be an existing player when we are EDITING a player.
+			_context.SaveChanges();
+
+			return RedirectToAction("Index", "Players");
+		}
+
+		public ActionResult Delete(int id)
+		{
+			var playerInDb = _context.Players.SingleOrDefault(p => p.Id == id);
+
+			_context.Players.Remove(playerInDb);
 			_context.SaveChanges();
 
 			return RedirectToAction("Index", "Players");
